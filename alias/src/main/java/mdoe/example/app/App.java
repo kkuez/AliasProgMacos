@@ -6,10 +6,10 @@ import java.lang.String;
 import java.io.File;
 import java.io.IOException;
 import java.lang.System;
+import java.util.Scanner;
 
 
-
-public class App 
+public class App
 {
 
     public static void main( String[] args )
@@ -66,25 +66,33 @@ public class App
        }
     }
 
+    public static String[] einlesen() throws IOException{
+        System.out.println("Einlesen-Funktion gestartet");
+        String home  = System.getProperty("user.home");
+        String[] opteinstr = new String[21];
+        Scanner optein = new Scanner(new File(home+"/alias.txt"));      //JfD, S. 215
+        for(int i =0;i<21;i++){
+            opteinstr[i] = optein.nextLine();                          //mit nextLine() jeweils die nächste Zeile auslesen
+        }
 
 
-    public static void start(){
-
-    System.out.println("Start-Funktion gestartet");
-
-    String home  = System.getProperty("user.home");
-    File optdatei = new File(home + "/alias.txt");
-
-
-
-
-
-
+       optein.close();
+        return (opteinstr);
     }
 
 
+    public static void start() {
 
+    System.out.println("Start-Funktion gestartet");
 
+    String[] optdateiarray = new String[21];
+    try {                                                                       //einlesen() wirft evtl. Fehler, daher trycatch
+        optdateiarray= einlesen();
+    }catch(IOException e){
+        System.out.println("OOOPS LESEN: "+e);
+    }
+        System.out.println(optdateiarray[20]);
 
+    }
 
 }
