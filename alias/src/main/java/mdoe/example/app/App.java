@@ -9,7 +9,10 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URL;
+import java.nio.file.Files;
 import java.util.ArrayList;
+import java.lang.System;
+import java.util.Scanner;
 
 import static mdoe.example.app.App.start;
 
@@ -71,6 +74,8 @@ public class App
                BufferedWriter bw = new BufferedWriter(fw);
                bw.write(optlistestr);
                bw.close();
+
+
            }catch(IOException e){
 
                System.out.println("OOOPS SCHREIEBN: "+e);
@@ -88,6 +93,15 @@ public class App
 
 
     public static void start(){
+
+    System.out.println("Start-Funktion gestartet");
+
+    String home  = System.getProperty("user.home");
+    File optdatei = new File(home + "/alias.txt");
+
+
+
+
 
 
     }
