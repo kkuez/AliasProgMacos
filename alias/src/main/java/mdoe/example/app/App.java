@@ -44,7 +44,7 @@ public class App
             try {
 
                 File optdatei = new File(home+"/alias.txt");
-                optdatei.createNewFile();                                   //Datei erstellen
+                optdatei.createNewFile();                                   //Opt-Datei erstellen
 
                 System.out.println("Neue Options-Datei geschrieben.");
             }catch(IOException e){
@@ -62,6 +62,16 @@ public class App
            }catch(IOException e){
 
                System.out.println("OOOPS SCHREIEBN: "+e);
+           }
+
+           try {
+
+               File optdatei = new File(home+"/.bash_aliases");
+               optdatei.createNewFile();                                   //bashaliases-Datei erstellen
+
+               System.out.println("Neue .bash_aliases-Datei geschrieben.");
+           }catch(IOException e){
+               System.out.println("OOOPS: "+e);
            }
        }
     }
@@ -81,18 +91,101 @@ public class App
     }
 
 
+
     public static void start() {
 
     System.out.println("Start-Funktion gestartet");
 
+    //Vorhandene Opt-Datei einlesen
     String[] optdateiarray = new String[21];
     try {                                                                       //einlesen() wirft evtl. Fehler, daher trycatch
         optdateiarray= einlesen();
     }catch(IOException e){
         System.out.println("OOOPS LESEN: "+e);
     }
-        System.out.println(optdateiarray[20]);
+
+
+        //UI Start
+        System.out.print("################\nAliases Programm\n################\n\nFolgende aliases sind bisher den Bezeichnungen c0...c9 zugewiesen:\n\n");
+        for(int i=11; i<21;i++){
+            System.out.print(optdateiarray[i]+"\n");
+        }
+        System.out.println("Zuweisungen ändern?(y/n)");                   //Abfrage Zuweisungen ändern ja nein
+        Scanner aendern = new Scanner(System.in);
+        String aendernstr = aendern.next();
+
+        switch(aendernstr){
+            case "y":
+                System.out.print("Welche Zuweisung soll geändert werden? (c0...c9 tippen)");
+                String zuwaendernstr = "asd";
+                Scanner zuwaendern=new Scanner(System.in);
+                zuwaendernstr = zuwaendern.next();
+
+
+                switch(zuwaendernstr){
+                    case "c0":
+                        zuweisungaendern("0");
+                        break;
+                    case "c1":
+                        zuweisungaendern("1");
+                        break;
+                    case "c2":
+                        zuweisungaendern("2");
+                        break;
+                    case "c3":
+                        zuweisungaendern("3");
+                        break;
+                    case "c4":
+                        zuweisungaendern("4");
+                        break;
+                    case "c5":
+                        zuweisungaendern("5");
+                        break;
+                    case "c6":
+                        zuweisungaendern("6");
+                        break;
+                    case "c7":
+                        zuweisungaendern("7");
+                        break;
+                    case "c8":
+                        zuweisungaendern("8");
+                        break;
+                    case "c9":
+                        zuweisungaendern("9");
+                        break;
+                        default:
+                            break;
+                }
+                break;
+            case "n":
+                System.out.print("Schliessen...");
+                System.exit(0);
+                break;
+
+            default:
+                break;
+
+        }
 
     }
+
+
+    public static String[] zuweisungaendern(String cx){
+
+        String home  = System.getProperty("user.home");
+
+        System.out.print("Bitte alias-Befehl für c"+cx+" eingeben:");
+        Scanner aliasc = new Scanner(System.in);
+        String aliascstr = aliasc.next();
+        String[] ret = new String[2];
+        ret[0]=cx;                                                  //zurückgeben: 0=platz, 1= der befehl
+        ret[1]=aliascstr;
+
+        System.out.print("Geschrieben c"+cx+": "+aliascstr);
+
+        return(ret);
+    }
+
+
 
 }
