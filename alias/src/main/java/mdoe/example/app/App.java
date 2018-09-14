@@ -11,11 +11,9 @@ import java.lang.System;
 
 public class App 
 {
-   public static void main( String[] args )
 
-
+    public static void main( String[] args )
     {
-
         String home = System.getProperty("user.home");         //Systemunabhaeging homefolder finden https://stackoverflow.com/questions/585534/what-is-the-best-way-to-find-the-users-home-directory-in-java
 
         File aliasopt = new File(home+"/alias.txt");     //Checken ob Optionsdtei existiert
@@ -42,7 +40,6 @@ public class App
            }
 
            System.out.println("DATEI: \n"+optlistestr);
-
 
             try {
 
