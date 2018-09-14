@@ -1,31 +1,17 @@
 package mdoe.example.app;
 
-
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.lang.String;
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.net.URL;
-import java.nio.file.Files;
-import java.util.ArrayList;
 import java.lang.System;
-import java.util.Scanner;
 
-import static mdoe.example.app.App.start;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
-
-
-
-    public static void main( String[] args )
+   public static void main( String[] args )
 
 
     {
@@ -81,13 +67,6 @@ public class App
                System.out.println("OOOPS SCHREIEBN: "+e);
            }
        }
-
-
-
-
-
-
-
     }
 
 
