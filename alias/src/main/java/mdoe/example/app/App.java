@@ -27,7 +27,7 @@ public class App
 
            for(int i =0;i<20;i++){
                if (i>9){
-                   optliste[i]="c"+(i-10)+": Keine alias-Zuweisung vorhanden!";
+                   optliste[i]="Keine alias-Zuweisung vorhanden!";
                }else{
               optliste[i]="";}
                System.out.println(optliste[i]);
@@ -108,7 +108,7 @@ public class App
         //UI Start
         System.out.print("################\nAliases Programm\n################\n\nFolgende aliases sind bisher den Bezeichnungen c0...c9 zugewiesen:\n\n");
         for(int i=11; i<21;i++){
-            System.out.print(optdateiarray[i]+"\n");
+            System.out.print("c"+(i-11)+": "+ optdateiarray[i]+"\n");
         }
         System.out.println("Zuweisungen ändern?(y/n)");                   //Abfrage Zuweisungen ändern ja nein
         Scanner aendern = new Scanner(System.in);
@@ -124,34 +124,34 @@ public class App
 
                 switch(zuwaendernstr){
                     case "c0":
-                        zuweisungaendern("0");
+                        optdateispeichern(0, zuweisungaendern("0"));
                         break;
                     case "c1":
-                        zuweisungaendern("1");
+                        optdateispeichern(1,zuweisungaendern("1"));
                         break;
                     case "c2":
-                        zuweisungaendern("2");
+                        optdateispeichern(2,zuweisungaendern("2"));
                         break;
                     case "c3":
-                        zuweisungaendern("3");
+                        optdateispeichern(3,zuweisungaendern("3"));
                         break;
                     case "c4":
-                        zuweisungaendern("4");
+                        optdateispeichern(4,zuweisungaendern("4"));
                         break;
                     case "c5":
-                        zuweisungaendern("5");
+                        optdateispeichern(5,zuweisungaendern("5"));
                         break;
                     case "c6":
-                        zuweisungaendern("6");
+                        optdateispeichern(6,zuweisungaendern("6"));
                         break;
                     case "c7":
-                        zuweisungaendern("7");
+                        optdateispeichern(7,zuweisungaendern("7"));
                         break;
                     case "c8":
-                        zuweisungaendern("8");
+                        optdateispeichern(8,zuweisungaendern("8"));
                         break;
                     case "c9":
-                        zuweisungaendern("9");
+                        optdateispeichern(9,zuweisungaendern("9"));
                         break;
                         default:
                             break;
@@ -186,6 +186,51 @@ public class App
         return(ret);
     }
 
+    public static void optdateispeichern(int cx, String[] einarray) {
+        String[] optdateiarray = new String[21];
+        try {                                                                       //einlesen() wirft evtl. Fehler, daher trycatch
+            optdateiarray = einlesen();
+        } catch (IOException e) {
+            System.out.println("OOOPS LESEN: " + e);
+        }
+
+        optdateiarray[(cx + 11)] = einarray[1];
+
+        String home = System.getProperty("user.home");
+        File optdatei = new File(home + "/alias.txt");
+        try{
+        FileWriter fw = new FileWriter(optdatei);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            for (int i =0;i<21;i++){
+            bw.write(optdateiarray[i]+"\n");
+
+            }
+
+            bw.close();
+    }catch(IOException e){
+        System.out.print("OOOPS WRITE: "+e);
+
+            }
+                    // in .bash_aliases schreiben
+
+        File bash_aliases = new File(home + "/.bash_aliases");
+        try{
+            FileWriter fw = new FileWriter(bash_aliases);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            for (int i =10;i<20;i++){
+                bw.write("\nalias c"+(cx+(i-10))+"='"+optdateiarray[(i+1)]+"'");
+
+            }
+
+            bw.close();
+        }catch(IOException e) {
+            System.out.print("OOOPS WRITE: " + e);
+        }
+
+        System.out.print("Neue Terminal-Session starten damit Veränderungen wirksam werden!");
+    }
 
 
 }

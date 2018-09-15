@@ -15,18 +15,25 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mdoe/example/app/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1163">
-              <caret line="185" column="18" selection-start-line="185" selection-start-column="18" selection-end-line="185" selection-end-column="18" />
+            <state relative-caret-position="168">
+              <caret line="68" column="53" selection-start-line="68" selection-start-column="48" selection-end-line="68" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#main#0;class#App#0" />
                 <element signature="method#einlesen#0;class#App#0" />
+                <element signature="method#start#0;class#App#0" />
+                <element signature="method#zuweisungaendern#0;class#App#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>.bash</find>
+      <find>bash_</find>
+    </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -46,6 +53,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -68,9 +76,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -223,14 +230,14 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50061053" side_tool="true" weight="0.328341" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.328341" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.328341" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32949308" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1935287" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1959707" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -253,23 +260,49 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/mdoe/example/app/App.java</url>
-          <line>129</line>
+          <line>216</line>
           <properties />
-          <option name="timeStamp" value="20" />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/mdoe/example/app/App.java</url>
+          <line>191</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/mdoe/example/app/App.java</url>
+          <line>198</line>
+          <properties />
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="21" />
+      <option name="time" value="27" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mdoe/example/app/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3145">
+          <caret line="185" column="18" selection-start-line="185" selection-start-column="18" selection-end-line="185" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#einlesen#0;class#App#0" />
+            <element signature="method#start#0;class#App#0" />
+            <element signature="method#zuweisungaendern#0;class#App#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mdoe/example/app/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1717">
           <caret line="101" selection-start-line="101" selection-end-line="101" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#App#0" />
             <element signature="method#einlesen#0;class#App#0" />
+            <element signature="method#start#0;class#App#0" />
+            <element signature="method#zuweisungaendern#0;class#App#0" />
           </folding>
         </state>
       </provider>
@@ -280,8 +313,9 @@
           <caret line="72" column="26" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#App#0" />
             <element signature="method#einlesen#0;class#App#0" />
+            <element signature="method#start#0;class#App#0" />
+            <element signature="method#zuweisungaendern#0;class#App#0" />
           </folding>
         </state>
       </provider>
@@ -292,8 +326,9 @@
           <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#App#0" />
             <element signature="method#einlesen#0;class#App#0" />
+            <element signature="method#start#0;class#App#0" />
+            <element signature="method#zuweisungaendern#0;class#App#0" />
           </folding>
         </state>
       </provider>
@@ -314,12 +349,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mdoe/example/app/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1163">
-          <caret line="185" column="18" selection-start-line="185" selection-start-column="18" selection-end-line="185" selection-end-column="18" />
+        <state relative-caret-position="168">
+          <caret line="68" column="53" selection-start-line="68" selection-start-column="48" selection-end-line="68" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#App#0" />
             <element signature="method#einlesen#0;class#App#0" />
+            <element signature="method#start#0;class#App#0" />
+            <element signature="method#zuweisungaendern#0;class#App#0" />
           </folding>
         </state>
       </provider>
