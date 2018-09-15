@@ -23,13 +23,12 @@ public class App
            start();
        }else{
            System.out.println("Optionsdatei schreiben");
-           String optliste[]=new String[20];
+           String optliste[]=new String[10];
 
-           for(int i =0;i<20;i++){
-               if (i>9){
-                   optliste[i]="Keine alias-Zuweisung vorhanden!";
-               }else{
-              optliste[i]="";}
+           for(int i =0;i<10;i++){
+
+                   optliste[i]="";
+
                System.out.println(optliste[i]);
            }
 
@@ -81,7 +80,7 @@ public class App
         String home  = System.getProperty("user.home");
         String[] opteinstr = new String[21];
         Scanner optein = new Scanner(new File(home+"/alias.txt"));      //JfD, S. 215
-        for(int i =0;i<21;i++){
+        for(int i =0;i<10;i++){
             opteinstr[i] = optein.nextLine();                          //mit nextLine() jeweils die nächste Zeile auslesen
         }
 
@@ -107,8 +106,8 @@ public class App
 
         //UI Start
         System.out.print("################\nAliases Programm\n################\n\nFolgende aliases sind bisher den Bezeichnungen c0...c9 zugewiesen:\n\n");
-        for(int i=11; i<21;i++){
-            System.out.print("c"+(i-11)+": "+ optdateiarray[i]+"\n");
+        for(int i=0; i<10;i++){
+            System.out.print("c"+(i)+": "+ optdateiarray[i]+"\n");
         }
         System.out.println("Zuweisungen ändern?(y/n)");                   //Abfrage Zuweisungen ändern ja nein
         Scanner aendern = new Scanner(System.in);
@@ -181,20 +180,20 @@ public class App
         ret[0]=cx;                                                  //zurückgeben: 0=platz, 1= der befehl
         ret[1]=aliascstr;
 
-        System.out.print("Geschrieben c"+cx+": "+aliascstr);
+        System.out.print("Geschrieben c"+cx+": "+aliascstr+"\n");
 
         return(ret);
     }
 
     public static void optdateispeichern(int cx, String[] einarray) {
-        String[] optdateiarray = new String[21];
+        String[] optdateiarray = new String[10];
         try {                                                                       //einlesen() wirft evtl. Fehler, daher trycatch
             optdateiarray = einlesen();
         } catch (IOException e) {
             System.out.println("OOOPS LESEN: " + e);
         }
 
-        optdateiarray[(cx + 11)] = einarray[1];
+        optdateiarray[(cx)] = einarray[1];
 
         String home = System.getProperty("user.home");
         File optdatei = new File(home + "/alias.txt");
@@ -202,7 +201,7 @@ public class App
         FileWriter fw = new FileWriter(optdatei);
             BufferedWriter bw = new BufferedWriter(fw);
 
-            for (int i =0;i<21;i++){
+            for (int i =0;i<10;i++){
             bw.write(optdateiarray[i]+"\n");
 
             }
@@ -219,8 +218,8 @@ public class App
             FileWriter fw = new FileWriter(bash_aliases);
             BufferedWriter bw = new BufferedWriter(fw);
 
-            for (int i =10;i<20;i++){
-                bw.write("\nalias c"+(cx+(i-10))+"='"+optdateiarray[i]+"'");
+            for (int i =0;i<10;i++){
+                bw.write("\nalias c"+i+"='"+optdateiarray[i]+"'");
 
             }
 
