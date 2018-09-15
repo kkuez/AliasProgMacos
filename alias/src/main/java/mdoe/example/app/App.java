@@ -65,7 +65,7 @@ public class App
 
            try {
 
-               File optdatei = new File(home+"/.bash_aliases");
+               File optdatei = new File(home+"/.bash_profile");
                optdatei.createNewFile();                                   //bashaliases-Datei erstellen
 
                System.out.println("Neue .bash_aliases-Datei geschrieben.");
@@ -213,7 +213,7 @@ public class App
             }
                     // in .bash_aliases schreiben
 
-        File bash_aliases = new File(home + "/.bash_aliases");
+        File bash_aliases = new File(home + "/.bash_profile");
         try{
             FileWriter fw = new FileWriter(bash_aliases);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -222,7 +222,7 @@ public class App
                 bw.write("\nalias c"+i+"='"+optdateiarray[i]+"'");
 
             }
-
+		bw.write("\nalias setc='java -jar $HOME/Aliasprog/alias/target/alias-1.0-SNAPSHOT.jar'");
             bw.close();
         }catch(IOException e) {
             System.out.print("OOOPS WRITE: " + e);
