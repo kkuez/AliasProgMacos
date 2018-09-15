@@ -176,7 +176,7 @@ public class App
 
         System.out.print("Bitte alias-Befehl für c"+cx+" eingeben:");
         Scanner aliasc = new Scanner(System.in);
-        String aliascstr = aliasc.next();
+        String aliascstr = aliasc.nextLine();
         String[] ret = new String[2];
         ret[0]=cx;                                                  //zurückgeben: 0=platz, 1= der befehl
         ret[1]=aliascstr;
@@ -220,7 +220,7 @@ public class App
             BufferedWriter bw = new BufferedWriter(fw);
 
             for (int i =10;i<20;i++){
-                bw.write("\nalias c"+(cx+(i-10))+"='"+optdateiarray[(i+1)]+"'");
+                bw.write("\nalias c"+(cx+(i-10))+"='"+optdateiarray[i]+"'");
 
             }
 
@@ -229,7 +229,7 @@ public class App
             System.out.print("OOOPS WRITE: " + e);
         }
 
-        System.out.print("Neue Terminal-Session starten damit Veränderungen wirksam werden!");
+        System.out.print("Neue Terminal-Session starten damit Veränderungen wirksam werden!\n");
     }
 
 
