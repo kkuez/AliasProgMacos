@@ -27,7 +27,7 @@ public class App
 
            for(int i =0;i<10;i++){
 
-                   optliste[i]="";
+                   optliste[i]="\n";
 
                System.out.println(optliste[i]);
            }
