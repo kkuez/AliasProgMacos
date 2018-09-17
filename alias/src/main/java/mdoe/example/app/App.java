@@ -65,10 +65,13 @@ public class App
 
            try {
 
-               File optdatei = new File(home+"/.bash_profile");
-               optdatei.createNewFile();                                   //bashaliases-Datei erstellen
+	           File bash_aliases = new File(home + "/.bash_profile");
+	           
+	               FileWriter fw = new FileWriter(bash_aliases);
+	               BufferedWriter bw = new BufferedWriter(fw);
 
-               System.out.println("Written new .bash_aliases-File.");
+	   		bw.write("\nalias setc='java -jar $HOME/AliasprogMacos/alias/target/alias-1.0-SNAPSHOT.jar'");
+	               bw.close();
            }catch(IOException e){
                System.out.println("OOOPS: "+e);
            }
