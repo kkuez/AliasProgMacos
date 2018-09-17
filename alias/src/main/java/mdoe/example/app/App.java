@@ -96,7 +96,7 @@ public class App
 
     public static void start() {
 
-    System.out.println("Start-Funktion gestartet");
+    //System.out.println("Start-Funktion gestartet");
 
     //Vorhandene Opt-Datei einlesen
     String[] optdateiarray = new String[21];
@@ -108,11 +108,11 @@ public class App
 
 
         //UI Start
-        System.out.print("################\nAliases Program\n################\n\nFollowing commands are written to the shortcuts c0...c9:\n\n");
+        System.out.print("\n################\nAliases Program\n################\n\nFollowing commands are written to the shortcuts c0...c9:\n\n");
         for(int i=0; i<10;i++){
             System.out.print("c"+(i)+": "+ optdateiarray[i]+"\n");
         }
-        System.out.println("Change shortcut?(y/n)");                   //Abfrage Zuweisungen ändern ja nein
+        System.out.println("\nChange shortcut?(y/n)");                   //Abfrage Zuweisungen ändern ja nein
         Scanner aendern = new Scanner(System.in);
         String aendernstr = aendern.next();
 
