@@ -16,13 +16,13 @@ public class App
     {
         String home = System.getProperty("user.home");         //Systemunabhaeging homefolder finden https://stackoverflow.com/questions/585534/what-is-the-best-way-to-find-the-users-home-directory-in-java
 
-        File aliasopt = new File(home+"/alias.txt");     //Checken ob Optionsdtei existiert
+        File aliasopt = new File(home+"/.alias.txt");     //Checken ob Optionsdtei existiert
        if (aliasopt.exists()){
-           System.out.println("Starte Start-Funktion");
+          // System.out.println("Starte Start-Funktion");
 
            start();
        }else{
-           System.out.println("Optionsdatei schreiben");
+         //  System.out.println("Optionsdatei schreiben");
            String optliste[]=new String[10];
 
            for(int i =0;i<10;i++){
@@ -42,7 +42,7 @@ public class App
 
             try {
 
-                File optdatei = new File(home+"/alias.txt");
+                File optdatei = new File(home+"/.alias.txt");
                 optdatei.createNewFile();                                   //Opt-Datei erstellen
 
                 System.out.println("Written new Option-File.");
@@ -51,7 +51,7 @@ public class App
             }
 
            try {
-               File optdatei = new File(home+"/alias.txt");         //Datei schreiben https://stackoverflow.com/questions/20509114/bufferedwriter-not-writing-to-text-file
+               File optdatei = new File(home+"/.alias.txt");         //Datei schreiben https://stackoverflow.com/questions/20509114/bufferedwriter-not-writing-to-text-file
                FileWriter fw = new FileWriter(optdatei);
                BufferedWriter bw = new BufferedWriter(fw);
                bw.write(optlistestr);
@@ -76,10 +76,10 @@ public class App
     }
 
     public static String[] einlesen() throws IOException{
-        System.out.println("Einlesen-Funktion gestartet");
+       // System.out.println("Einlesen-Funktion gestartet");
         String home  = System.getProperty("user.home");
         String[] opteinstr = new String[21];
-        Scanner optein = new Scanner(new File(home+"/alias.txt"));      //JfD, S. 215
+        Scanner optein = new Scanner(new File(home+"/.alias.txt"));      //JfD, S. 215
         for(int i =0;i<10;i++){
             opteinstr[i] = optein.nextLine();                          //mit nextLine() jeweils die nächste Zeile auslesen
         }
@@ -196,7 +196,7 @@ public class App
         optdateiarray[(cx)] = einarray[1];
 
         String home = System.getProperty("user.home");
-        File optdatei = new File(home + "/alias.txt");
+        File optdatei = new File(home + "/.alias.txt");
         try{
         FileWriter fw = new FileWriter(optdatei);
             BufferedWriter bw = new BufferedWriter(fw);
