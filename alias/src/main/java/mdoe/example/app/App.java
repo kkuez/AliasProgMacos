@@ -38,14 +38,14 @@ public class App
 
            }
 
-           System.out.println("DATEI: \n"+optlistestr);
+           System.out.println("File: \n"+optlistestr);
 
             try {
 
                 File optdatei = new File(home+"/alias.txt");
                 optdatei.createNewFile();                                   //Opt-Datei erstellen
 
-                System.out.println("Neue Options-Datei geschrieben.");
+                System.out.println("Written new Option-File.");
             }catch(IOException e){
                 System.out.println("OOOPS: "+e);
             }
@@ -68,7 +68,7 @@ public class App
                File optdatei = new File(home+"/.bash_profile");
                optdatei.createNewFile();                                   //bashaliases-Datei erstellen
 
-               System.out.println("Neue .bash_aliases-Datei geschrieben.");
+               System.out.println("Written new .bash_aliases-File.");
            }catch(IOException e){
                System.out.println("OOOPS: "+e);
            }
@@ -105,17 +105,17 @@ public class App
 
 
         //UI Start
-        System.out.print("################\nAliases Programm\n################\n\nFolgende aliases sind bisher den Bezeichnungen c0...c9 zugewiesen:\n\n");
+        System.out.print("################\nAliases Program\n################\n\nFollowing commands are written to the shortcuts c0...c9:\n\n");
         for(int i=0; i<10;i++){
             System.out.print("c"+(i)+": "+ optdateiarray[i]+"\n");
         }
-        System.out.println("Zuweisungen ändern?(y/n)");                   //Abfrage Zuweisungen ändern ja nein
+        System.out.println("Change shortcut?(y/n)");                   //Abfrage Zuweisungen ändern ja nein
         Scanner aendern = new Scanner(System.in);
         String aendernstr = aendern.next();
 
         switch(aendernstr){
             case "y":
-                System.out.print("Welche Zuweisung soll geändert werden? (c0...c9 tippen)");
+                System.out.print("Which shortcut should be changed? (type c0...c9)");
                 String zuwaendernstr = "asd";
                 Scanner zuwaendern=new Scanner(System.in);
                 zuwaendernstr = zuwaendern.next();
@@ -157,7 +157,7 @@ public class App
                 }
                 break;
             case "n":
-                System.out.print("Schliessen...");
+                System.out.print("Close...");
                 System.exit(0);
                 break;
 
@@ -173,14 +173,14 @@ public class App
 
         String home  = System.getProperty("user.home");
 
-        System.out.print("Bitte alias-Befehl für c"+cx+" eingeben:");
+        System.out.print("Type new command for alias-shortcut c"+cx+":");
         Scanner aliasc = new Scanner(System.in);
         String aliascstr = aliasc.nextLine();
         String[] ret = new String[2];
         ret[0]=cx;                                                  //zurückgeben: 0=platz, 1= der befehl
         ret[1]=aliascstr;
 
-        System.out.print("Geschrieben c"+cx+": "+aliascstr+"\n");
+        System.out.print("Written c"+cx+": "+aliascstr+"\n");
 
         return(ret);
     }
@@ -222,13 +222,13 @@ public class App
                 bw.write("\nalias c"+i+"='"+optdateiarray[i]+"'");
 
             }
-		bw.write("\nalias setc='java -jar $HOME/Aliasprog/alias/target/alias-1.0-SNAPSHOT.jar'");
+		bw.write("\nalias setc='java -jar $HOME/AliasprogMacos/alias/target/alias-1.0-SNAPSHOT.jar'");
             bw.close();
         }catch(IOException e) {
             System.out.print("OOOPS WRITE: " + e);
         }
 
-        System.out.print("Neue Terminal-Session starten damit Veränderungen wirksam werden!\n");
+        System.out.print("Start new Terminalsession to let the changes have effect!\n");
     }
 
 
